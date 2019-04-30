@@ -2,7 +2,11 @@
 
 SQL Administrator is a single file SQL administrator tool built using ASP.NET Web Forms.
 
-![screenshot](screenshot.jpg "SQL Administrator with the Northwind database")
+The tool is meant to be used in situations where you cannot connect to SQL Server from the outside, usually due to (very reasonable) firewall restrictions.
+
+Below is a screen shot of SQL Administrator connected to an instance of the Northwind database.
+
+![screenshot](screenshot.jpg "SQL Administrator connected to the Northwind database")
 
 ## Instructions
 
@@ -16,12 +20,14 @@ Edit your `Web.config` file to secure the `SqlAdministrator.aspx` file:
 
 ```xml
 <location path="SqlAdministrator.aspx">
-<system.web>
+  <system.web>
     <authorization>
-    <deny users="?"/>
+      <deny users="?"/>
     </authorization>
-</system.web>
+  </system.web>
 </location>
 ```
 
-Finally drop the `SqlAdministrator.aspx` in the root of your web app.
+Drop the `SqlAdministrator.aspx` in the root of your web app.
+
+You can now browse to `~/SqlAdministrator.aspx` to start working with your online database.
